@@ -1,0 +1,5912 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/joepie91/node-bhttp#readme"
+
+    >bhttp (v1.2.4)</a>
+</h1>
+<h4>A sane HTTP client library for Node.js with Streams2 support.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp">module bhttp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError">
+            function <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.super_">
+            function <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConnectionTimeoutError">
+            function <span class="apidocSignatureSpan">bhttp.</span>ConnectionTimeoutError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.MultipartError">
+            function <span class="apidocSignatureSpan">bhttp.</span>MultipartError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.RedirectError">
+            function <span class="apidocSignatureSpan">bhttp.</span>RedirectError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ResponseTimeoutError">
+            function <span class="apidocSignatureSpan">bhttp.</span>ResponseTimeoutError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.UnsupportedProtocolError">
+            function <span class="apidocSignatureSpan">bhttp.</span>UnsupportedProtocolError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp._doRequest">
+            function <span class="apidocSignatureSpan">bhttp.</span>_doRequest
+            <span class="apidocSignatureSpan">(url, options, requestState)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttpError">
+            function <span class="apidocSignatureSpan">bhttp.</span>bhttpError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.delete">
+            function <span class="apidocSignatureSpan">bhttp.</span>delete
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.executeRequest">
+            function <span class="apidocSignatureSpan">bhttp.</span>executeRequest
+            <span class="apidocSignatureSpan">(request, response, requestState)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.get">
+            function <span class="apidocSignatureSpan">bhttp.</span>get
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.head">
+            function <span class="apidocSignatureSpan">bhttp.</span>head
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.patch">
+            function <span class="apidocSignatureSpan">bhttp.</span>patch
+            <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.post">
+            function <span class="apidocSignatureSpan">bhttp.</span>post
+            <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.put">
+            function <span class="apidocSignatureSpan">bhttp.</span>put
+            <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.request">
+            function <span class="apidocSignatureSpan">bhttp.</span>request
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.session">
+            function <span class="apidocSignatureSpan">bhttp.</span>session
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.wrapStream">
+            function <span class="apidocSignatureSpan">bhttp.</span>wrapStream
+            <span class="apidocSignatureSpan">(stream, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>bhttp</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>ConnectionTimeoutError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>MultipartError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>RedirectError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>ResponseTimeoutError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>UnsupportedProtocolError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bhttp.</span>bhttpError.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ConflictingOptionsError">module bhttp.ConflictingOptionsError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.ConflictingOptionsError">
+            function <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.super_">
+            function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ConflictingOptionsError.prototype">module bhttp.ConflictingOptionsError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ConflictingOptionsError.super_">module bhttp.ConflictingOptionsError.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.super_.super_">
+            function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConflictingOptionsError.super_.captureStackTrace">
+            function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.super_.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.super_.</span>stackTraceLimit</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ConnectionTimeoutError">module bhttp.ConnectionTimeoutError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConnectionTimeoutError.ConnectionTimeoutError">
+            function <span class="apidocSignatureSpan">bhttp.</span>ConnectionTimeoutError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConnectionTimeoutError.super_">
+            function <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ConnectionTimeoutError.prototype">module bhttp.ConnectionTimeoutError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConnectionTimeoutError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ConnectionTimeoutError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.MultipartError">module bhttp.MultipartError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.MultipartError.MultipartError">
+            function <span class="apidocSignatureSpan">bhttp.</span>MultipartError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.MultipartError.super_">
+            function <span class="apidocSignatureSpan">bhttp.MultipartError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.MultipartError.prototype">module bhttp.MultipartError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.MultipartError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.MultipartError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.MultipartError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.MultipartError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.MultipartError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.RedirectError">module bhttp.RedirectError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.RedirectError.RedirectError">
+            function <span class="apidocSignatureSpan">bhttp.</span>RedirectError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.RedirectError.super_">
+            function <span class="apidocSignatureSpan">bhttp.RedirectError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.RedirectError.prototype">module bhttp.RedirectError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.RedirectError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.RedirectError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.RedirectError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.RedirectError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.RedirectError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ResponseTimeoutError">module bhttp.ResponseTimeoutError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ResponseTimeoutError.ResponseTimeoutError">
+            function <span class="apidocSignatureSpan">bhttp.</span>ResponseTimeoutError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ResponseTimeoutError.super_">
+            function <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.ResponseTimeoutError.prototype">module bhttp.ResponseTimeoutError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ResponseTimeoutError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.ResponseTimeoutError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.UnsupportedProtocolError">module bhttp.UnsupportedProtocolError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.UnsupportedProtocolError.UnsupportedProtocolError">
+            function <span class="apidocSignatureSpan">bhttp.</span>UnsupportedProtocolError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.UnsupportedProtocolError.super_">
+            function <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.UnsupportedProtocolError.prototype">module bhttp.UnsupportedProtocolError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.UnsupportedProtocolError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.UnsupportedProtocolError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.bhttp">module bhttp.bhttp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.ConflictingOptionsError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>ConflictingOptionsError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.ConnectionTimeoutError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>ConnectionTimeoutError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.MultipartError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>MultipartError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.RedirectError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>RedirectError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.ResponseTimeoutError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>ResponseTimeoutError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.UnsupportedProtocolError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>UnsupportedProtocolError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp._doRequest">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>_doRequest
+            <span class="apidocSignatureSpan">(url, options, requestState)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.bhttpError">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>bhttpError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.delete">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>delete
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.executeRequest">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>executeRequest
+            <span class="apidocSignatureSpan">(request, response, requestState)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.get">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>get
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.head">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>head
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.patch">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>patch
+            <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.post">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>post
+            <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.put">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>put
+            <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.request">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>request
+            <span class="apidocSignatureSpan">(url, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.session">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>session
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttp.wrapStream">
+            function <span class="apidocSignatureSpan">bhttp.bhttp.</span>wrapStream
+            <span class="apidocSignatureSpan">(stream, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.bhttpError">module bhttp.bhttpError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttpError.bhttpError">
+            function <span class="apidocSignatureSpan">bhttp.</span>bhttpError
+            <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttpError.super_">
+            function <span class="apidocSignatureSpan">bhttp.bhttpError.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bhttp.bhttpError.prototype">module bhttp.bhttpError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttpError.prototype.toJSON">
+            function <span class="apidocSignatureSpan">bhttp.bhttpError.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bhttp.bhttpError.prototype.toString">
+            function <span class="apidocSignatureSpan">bhttp.bhttpError.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bhttp.bhttpError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp" id="apidoc.module.bhttp">module bhttp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError" id="apidoc.element.bhttp.ConflictingOptionsError">
+        function <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConflictingOptionsError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		Promise.resolve [request, response, requestState]
+
+prepareOptions = (request, response, requestState) -&#x3e;
+	debugRequest &#x22;preparing options&#x22;
+	Promise.try -&#x3e;
+		# Do some sanity checks - there are a number of options that cannot be used together
+		if (request.options.formFields? or request.options.files?) and (request.options.inputStream? or request.options.inputBuffer?)
+			return Promise.reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ConflictingOptionsError</span>(&#x22;You
+ cannot define both formFields/files and a raw inputStream or inputBuffer.&#x22;), request, response, requestState)
+
+		if request.options.encodeJSON and (request.options.inputStream? or request.options.inputBuffer?)
+			return Promise.reject addErrorData(new bhttpErrors.ConflictingOptionsError(&#x22;You cannot use both encodeJSON and a raw inputStream
+ or inputBuffer.&#x22;, undefined, &#x22;If you meant to JSON-encode the stream, you will currently have to do so manually.&#x22
+;), request, response, requestState)
+
+		# If the user plans on streaming the response, we need to disable the agent entirely - otherwise the streams will block the pool
+.
+		if request.responseOptions.stream
+			request.options.agent ?= false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.super_" id="apidoc.element.bhttp.ConflictingOptionsError.super_">
+        function <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConnectionTimeoutError" id="apidoc.element.bhttp.ConnectionTimeoutError">
+        function <span class="apidocSignatureSpan">bhttp.</span>ConnectionTimeoutError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConnectionTimeoutError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				debugRequest &#x22;closing request without payload&#x22;
+				req.end()
+
+			# In case something goes wrong during this process, somehow...
+			req.on &#x22;error&#x22;, (err) -&#x3e;
+				if err.code == &#x22;ETIMEDOUT&#x22;
+					debugRequest &#x22;a connection timeout occurred!&#x22;
+					reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ConnectionTimeoutError</span>(&#x22;The connection
+timed out.&#x22;))
+				else
+					reject err
+
+			req.on &#x22;response&#x22;, (res) -&#x3e;
+				if timeoutTimer?
+					debugResponse &#x22;got response in time, clearing response timeout timer&#x22;
+					clearTimeout(timeoutTimer)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.MultipartError" id="apidoc.element.bhttp.MultipartError">
+        function <span class="apidocSignatureSpan">bhttp.</span>MultipartError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MultipartError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.RedirectError" id="apidoc.element.bhttp.RedirectError">
+        function <span class="apidocSignatureSpan">bhttp.</span>RedirectError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RedirectError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		# Now the actual response processing.
+		response.request = request
+		response.requestState = requestState
+		response.redirectHistory = requestState.redirectHistory
+
+		if response.statusCode in [301, 302, 303, 307] and request.responseOptions.followRedirects
+			if requestState.redirectHistory.length &#x3e;= (request.responseOptions.redirectLimit - 1)
+				return Promise.reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">RedirectError</span>(&#x22;The maximum
+ amount of redirects ({request.responseOptions.redirectLimit}) was reached.&#x22;))
+
+			# 301: For GET and HEAD, redirect unchanged. For POST, PUT, PATCH, DELETE, &#x22;ask user&#x22; (in our case: throw an error.)
+			# 302: Redirect, change method to GET.
+			# 303: Redirect, change method to GET.
+			# 307: Redirect, retain method. Make same request again.
+			switch response.statusCode
+				when 301
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ResponseTimeoutError" id="apidoc.element.bhttp.ResponseTimeoutError">
+        function <span class="apidocSignatureSpan">bhttp.</span>ResponseTimeoutError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResponseTimeoutError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			# Connection timeout handling, if one is set.
+			if request.responseOptions.responseTimeout?
+				debugRequest &#x22;setting response timeout timer to #{request.responseOptions.responseTimeout}ms...&#x22;
+				req.on &#x22;socket&#x22;, (socket) -&#x3e;
+					timeoutHandler = -&#x3e;
+						debugRequest &#x22;a response timeout occurred!&#x22;
+						req.abort()
+						reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ResponseTimeoutError</span>(&#x22;The response timed
+ out.&#x22;))
+
+					timeoutTimer = setTimeout(timeoutHandler, request.responseOptions.responseTimeout)
+
+			# Set up the upload progress monitoring.
+			totalBytes = request.options.headers[&#x22;content-length&#x22;]
+			completedBytes = 0
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.UnsupportedProtocolError" id="apidoc.element.bhttp.UnsupportedProtocolError">
+        function <span class="apidocSignatureSpan">bhttp.</span>UnsupportedProtocolError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UnsupportedProtocolError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    case &#x22;https&#x22;:
+      return https;
+    default:
+      return null;
+  }
+})();
+if (request.protocolModule == null) {
+  return Promise.reject()(new bhttpErrors.<span class="apidocCodeKeywordSpan">UnsupportedProtocolError</span>(&#x22;The protocol
+ specified (&#x22; + protocol + &#x22;) is not currently supported by this module.&#x22;));
+}
+if ((base = request.options).port == null) {
+  base.port = (function() {
+    switch (request.protocol) {
+      case &#x22;http&#x22;:
+        return 80;
+      case &#x22;https&#x22;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp._doRequest" id="apidoc.element.bhttp._doRequest">
+        function <span class="apidocSignatureSpan">bhttp.</span>_doRequest
+        <span class="apidocSignatureSpan">(url, options, requestState)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_doRequest = function (url, options, requestState) {
+  return Promise[&#x22;try&#x22;]((function(_this) {
+    return function() {
+      var ref, request, response;
+      request = {
+        url: url,
+        options: _.clone(options)
+      };
+      response = null;
+      if (requestState == null) {
+        requestState = {
+          originalOptions: _.clone(options),
+          redirectHistory: []
+        };
+      }
+      if (requestState.sessionOptions == null) {
+        requestState.sessionOptions = (ref = _this._sessionOptions) != null ? ref : {};
+      }
+      return prepareRequest(request, response, requestState);
+    };
+  })(this)).spread((function(_this) {
+    return function(request, response, requestState) {
+      if (request.responseOptions.justPrepare) {
+        return Promise.resolve([request, response, requestState]);
+      } else {
+        return Promise[&#x22;try&#x22;](function() {
+          return bhttpAPI.executeRequest(request, response, requestState);
+        }).spread(function(request, response, requestState) {
+          return Promise.resolve(response);
+        });
+      }
+    };
+  })(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+doRedirect = function(request, response, requestState, newOptions) {
+return Promise[&#x22;try&#x22;](function() {
+  if (!request.responseOptions.keepRedirectResponses) {
+    response.pipe(devNull());
+  }
+  requestState.redirectHistory.push(response);
+  return bhttpAPI.<span class="apidocCodeKeywordSpan">_doRequest</span>(urlUtil.resolve(request.url, response.headers[&#x22;location
+&#x22;]), newOptions, requestState);
+});
+};
+
+createCookieJar = function(jar) {
+return {
+  set: function(cookie, url) {
+    return new Promise((function(_this) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttpError" id="apidoc.element.bhttp.bhttpError">
+        function <span class="apidocSignatureSpan">bhttp.</span>bhttpError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bhttpError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.delete" id="apidoc.element.bhttp.delete">
+        function <span class="apidocSignatureSpan">bhttp.</span>delete
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;delete&#x22;;
+  return this.request(url, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## API
+
+The various error types are documented at the bottom of this README.
+
+### bhttp.head(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.<span class="apidocCodeKeywordSpan">delete</span>(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.put(url, [data, [options, [callback]]])
+### bhttp.patch(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.executeRequest" id="apidoc.element.bhttp.executeRequest">
+        function <span class="apidocSignatureSpan">bhttp.</span>executeRequest
+        <span class="apidocSignatureSpan">(request, response, requestState)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeRequest = function (request, response, requestState) {
+  return Promise[&#x22;try&#x22;](function() {
+    return makeRequest(request, response, requestState);
+  }).spread(function(request, response, requestState) {
+    return processResponse(request, response, requestState);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    };
+  })(this)).spread((function(_this) {
+    return function(request, response, requestState) {
+      if (request.responseOptions.justPrepare) {
+        return Promise.resolve([request, response, requestState]);
+      } else {
+        return Promise[&#x22;try&#x22;](function() {
+          return bhttpAPI.<span class="apidocCodeKeywordSpan">executeRequest</span>(request, response, requestState);
+        }).spread(function(request, response, requestState) {
+          return Promise.resolve(response);
+        });
+      }
+    };
+  })(this));
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.get" id="apidoc.element.bhttp.get">
+        function <span class="apidocSignatureSpan">bhttp.</span>get
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;get&#x22;;
+  return this.request(url, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A simple example:
+
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.<span class="apidocCodeKeywordSpan">get</span>(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.toString());
+});
+```
+
+... or, using nodebacks:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.head" id="apidoc.element.bhttp.head">
+        function <span class="apidocSignatureSpan">bhttp.</span>head
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;head&#x22;;
+  return this.request(url, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+## API
+
+The various error types are documented at the bottom of this README.
+
+### bhttp.<span class="apidocCodeKeywordSpan">head</span>(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.delete(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.put(url, [data, [options, [callback]]])
+### bhttp.patch(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.patch" id="apidoc.element.bhttp.patch">
+        function <span class="apidocSignatureSpan">bhttp.</span>patch
+        <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (url, data, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;patch&#x22;;
+  return doPayloadRequest.bind(this)(url, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The various error types are documented at the bottom of this README.
+
+### bhttp.head(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.delete(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.put(url, [data, [options, [callback]]])
+### bhttp.<span class="apidocCodeKeywordSpan">patch</span>(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+* __data__: *Optional, only for POST/PUT/PATCH.* The payload to send along.
+* __options__: *Optional.* Extra options for the request. More details under the documentation for the `bhttp.request` method below
+.
+* __callback__: *Optional.* When using the nodeback API, the callback to use. If not specified, a Promise will be returned.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.post" id="apidoc.element.bhttp.post">
+        function <span class="apidocSignatureSpan">bhttp.</span>post
+        <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (url, data, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;post&#x22;;
+  return doPayloadRequest.bind(this)(url, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://somesite.com/bigfile.mp4&#x22;, {stream: true});
+}).then(function(response) {
+	return bhttp.<span class="apidocCodeKeywordSpan">post</span>(&#x22;http://somehostingservice.com/upload&#x22;, {
+		fileOne: response,
+		fileTwo: fs.createReadStream(&#x22;./otherbigfile.mkv&#x22;)
+	});
+}).then(function(response) {
+	console.log(&#x22;Response from hosting service:&#x22;, response.body.toString());
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.put" id="apidoc.element.bhttp.put">
+        function <span class="apidocSignatureSpan">bhttp.</span>put
+        <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (url, data, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;put&#x22;;
+  return doPayloadRequest.bind(this)(url, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The various error types are documented at the bottom of this README.
+
+### bhttp.head(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.delete(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.<span class="apidocCodeKeywordSpan">put</span>(url, [data, [options, [callback]]])
+### bhttp.patch(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+* __data__: *Optional, only for POST/PUT/PATCH.* The payload to send along.
+* __options__: *Optional.* Extra options for the request. More details under the documentation for the `bhttp.request` method below
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.request" id="apidoc.element.bhttp.request">
+        function <span class="apidocSignatureSpan">bhttp.</span>request
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  return this._doRequest(url, options).nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* __String / Buffer__: The contents will be written to the request as-is.
+* __A stream__: The entire stream will be written to the request as-is.
+* __An object__: Will be encoded as form data, and can contain any combination of Strings, Buffers, streams, and arrays of any of
+ those. When only strings are used, the form data is querystring-encoded - if Buffers or streams are used, it will be encoded as
+ multipart/form-data.
+
+Further documentation for these methods, such as the response attributes, can be found in the below section for `bhttp.request`.
+
+### bhttp.<span class="apidocCodeKeywordSpan">request</span>(url, [options, [callback]])
+
+Makes a request, and returns the response object asynchronously. The response object is a standard `http.IncomingMessages` with
+a few additional properties (documented below the argument list).
+
+Note that (progress) event handlers must be specified in the `options` or (in the case of download progress events) as an event
+listener on the response object - as `bhttp` uses Promises, it is not technically possible to return an EventEmitter.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+* __options__: *Optional.* Extra options for the request. Any other options not listed here will be passed on directly to the `http
+` or `https` module.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.session" id="apidoc.element.bhttp.session">
+        function <span class="apidocSignatureSpan">bhttp.</span>session
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">session = function (options) {
+  var key, session, value;
+  if (options == null) {
+    options = {};
+  }
+  options = _.clone(options);
+  session = {};
+  for (key in this) {
+    value = this[key];
+    if (value instanceof Function) {
+      value = value.bind(session);
+    }
+    session[key] = value;
+  }
+  if (options.cookieJar == null) {
+    options.cookieJar = createCookieJar(new toughCookie.CookieJar());
+  } else if (options.cookieJar === false) {
+    delete options.cookieJar;
+  } else {
+    options.cookieJar = createCookieJar(options.cookieJar);
+  }
+  session._sessionOptions = options;
+  return session;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Sessions
+
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+var session = bhttp.<span class="apidocCodeKeywordSpan">session</span>({ headers: {&#x22;user-agent&#x22;: &#x22;MyCustomUserAgent
+/2.0&#x22;} });
+
+// Our new session now automatically has a cookie jar, and also uses our preset option(s).
+
+Promise.try(function(){
+	return session.get(&#x22;http://hypotheticalsite.com/cookietest&#x22;); // Assume that this site now sets a cookie
+}).then(function(response){
+	return session.get(&#x22;http://hypotheticalsite.com/other-endpoint&#x22;); // This now sends along the cookie!
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.wrapStream" id="apidoc.element.bhttp.wrapStream">
+        function <span class="apidocSignatureSpan">bhttp.</span>wrapStream
+        <span class="apidocSignatureSpan">(stream, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrapStream = function (stream, options) {
+  return {
+    _bhttpStreamWrapper: true,
+    stream: stream,
+    options: options
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### bhttp.session([defaultOptions])
+
+This will create a new session. The `defaultOptions` will be deep-merged with the options specified for each request (where the
+request-specific options have priority).
+
+A new cookie jar is automatically created, unless you either specify a custom `cookieJar` option or set the `cookieJar` option to
+ `false` (in which case no cookie jar is used).
+
+### bhttp.<span class="apidocCodeKeywordSpan">wrapStream</span>(stream, options)
+
+This will return a &#x27;stream wrapper&#x27; containing explicit metadata for a stream. You&#x27;ll need to use it when passing
+ an unsupported type of stream to a `data` parameter or `formFields`/`files` option.
+
+* __stream__: The stream to wrap.
+* __options__: The options for this stream. All options are optional, but recommended to specify.
+	* __contentLength__: The length of the stream in bytes.
+	* __contentType__: The MIME type of the stream.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ConflictingOptionsError" id="apidoc.module.bhttp.ConflictingOptionsError">module bhttp.ConflictingOptionsError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.ConflictingOptionsError" id="apidoc.element.bhttp.ConflictingOptionsError.ConflictingOptionsError">
+        function <span class="apidocSignatureSpan">bhttp.</span>ConflictingOptionsError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConflictingOptionsError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		Promise.resolve [request, response, requestState]
+
+prepareOptions = (request, response, requestState) -&#x3e;
+	debugRequest &#x22;preparing options&#x22;
+	Promise.try -&#x3e;
+		# Do some sanity checks - there are a number of options that cannot be used together
+		if (request.options.formFields? or request.options.files?) and (request.options.inputStream? or request.options.inputBuffer?)
+			return Promise.reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ConflictingOptionsError</span>(&#x22;You
+ cannot define both formFields/files and a raw inputStream or inputBuffer.&#x22;), request, response, requestState)
+
+		if request.options.encodeJSON and (request.options.inputStream? or request.options.inputBuffer?)
+			return Promise.reject addErrorData(new bhttpErrors.ConflictingOptionsError(&#x22;You cannot use both encodeJSON and a raw inputStream
+ or inputBuffer.&#x22;, undefined, &#x22;If you meant to JSON-encode the stream, you will currently have to do so manually.&#x22
+;), request, response, requestState)
+
+		# If the user plans on streaming the response, we need to disable the agent entirely - otherwise the streams will block the pool
+.
+		if request.responseOptions.stream
+			request.options.agent ?= false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.super_" id="apidoc.element.bhttp.ConflictingOptionsError.super_">
+        function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ConflictingOptionsError.prototype" id="apidoc.module.bhttp.ConflictingOptionsError.prototype">module bhttp.ConflictingOptionsError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.prototype.toJSON" id="apidoc.element.bhttp.ConflictingOptionsError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.prototype.toString" id="apidoc.element.bhttp.ConflictingOptionsError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ConflictingOptionsError.super_" id="apidoc.module.bhttp.ConflictingOptionsError.super_">module bhttp.ConflictingOptionsError.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.super_.super_" id="apidoc.element.bhttp.ConflictingOptionsError.super_.super_">
+        function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConflictingOptionsError.super_.captureStackTrace" id="apidoc.element.bhttp.ConflictingOptionsError.super_.captureStackTrace">
+        function <span class="apidocSignatureSpan">bhttp.ConflictingOptionsError.super_.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ConnectionTimeoutError" id="apidoc.module.bhttp.ConnectionTimeoutError">module bhttp.ConnectionTimeoutError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConnectionTimeoutError.ConnectionTimeoutError" id="apidoc.element.bhttp.ConnectionTimeoutError.ConnectionTimeoutError">
+        function <span class="apidocSignatureSpan">bhttp.</span>ConnectionTimeoutError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConnectionTimeoutError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				debugRequest &#x22;closing request without payload&#x22;
+				req.end()
+
+			# In case something goes wrong during this process, somehow...
+			req.on &#x22;error&#x22;, (err) -&#x3e;
+				if err.code == &#x22;ETIMEDOUT&#x22;
+					debugRequest &#x22;a connection timeout occurred!&#x22;
+					reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ConnectionTimeoutError</span>(&#x22;The connection
+timed out.&#x22;))
+				else
+					reject err
+
+			req.on &#x22;response&#x22;, (res) -&#x3e;
+				if timeoutTimer?
+					debugResponse &#x22;got response in time, clearing response timeout timer&#x22;
+					clearTimeout(timeoutTimer)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConnectionTimeoutError.super_" id="apidoc.element.bhttp.ConnectionTimeoutError.super_">
+        function <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ConnectionTimeoutError.prototype" id="apidoc.module.bhttp.ConnectionTimeoutError.prototype">module bhttp.ConnectionTimeoutError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConnectionTimeoutError.prototype.toJSON" id="apidoc.element.bhttp.ConnectionTimeoutError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ConnectionTimeoutError.prototype.toString" id="apidoc.element.bhttp.ConnectionTimeoutError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.ConnectionTimeoutError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.MultipartError" id="apidoc.module.bhttp.MultipartError">module bhttp.MultipartError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.MultipartError.MultipartError" id="apidoc.element.bhttp.MultipartError.MultipartError">
+        function <span class="apidocSignatureSpan">bhttp.</span>MultipartError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MultipartError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.MultipartError.super_" id="apidoc.element.bhttp.MultipartError.super_">
+        function <span class="apidocSignatureSpan">bhttp.MultipartError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.MultipartError.prototype" id="apidoc.module.bhttp.MultipartError.prototype">module bhttp.MultipartError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.MultipartError.prototype.toJSON" id="apidoc.element.bhttp.MultipartError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.MultipartError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.MultipartError.prototype.toString" id="apidoc.element.bhttp.MultipartError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.MultipartError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.RedirectError" id="apidoc.module.bhttp.RedirectError">module bhttp.RedirectError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.RedirectError.RedirectError" id="apidoc.element.bhttp.RedirectError.RedirectError">
+        function <span class="apidocSignatureSpan">bhttp.</span>RedirectError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RedirectError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		# Now the actual response processing.
+		response.request = request
+		response.requestState = requestState
+		response.redirectHistory = requestState.redirectHistory
+
+		if response.statusCode in [301, 302, 303, 307] and request.responseOptions.followRedirects
+			if requestState.redirectHistory.length &#x3e;= (request.responseOptions.redirectLimit - 1)
+				return Promise.reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">RedirectError</span>(&#x22;The maximum
+ amount of redirects ({request.responseOptions.redirectLimit}) was reached.&#x22;))
+
+			# 301: For GET and HEAD, redirect unchanged. For POST, PUT, PATCH, DELETE, &#x22;ask user&#x22; (in our case: throw an error.)
+			# 302: Redirect, change method to GET.
+			# 303: Redirect, change method to GET.
+			# 307: Redirect, retain method. Make same request again.
+			switch response.statusCode
+				when 301
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.RedirectError.super_" id="apidoc.element.bhttp.RedirectError.super_">
+        function <span class="apidocSignatureSpan">bhttp.RedirectError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.RedirectError.prototype" id="apidoc.module.bhttp.RedirectError.prototype">module bhttp.RedirectError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.RedirectError.prototype.toJSON" id="apidoc.element.bhttp.RedirectError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.RedirectError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.RedirectError.prototype.toString" id="apidoc.element.bhttp.RedirectError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.RedirectError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ResponseTimeoutError" id="apidoc.module.bhttp.ResponseTimeoutError">module bhttp.ResponseTimeoutError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ResponseTimeoutError.ResponseTimeoutError" id="apidoc.element.bhttp.ResponseTimeoutError.ResponseTimeoutError">
+        function <span class="apidocSignatureSpan">bhttp.</span>ResponseTimeoutError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResponseTimeoutError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			# Connection timeout handling, if one is set.
+			if request.responseOptions.responseTimeout?
+				debugRequest &#x22;setting response timeout timer to #{request.responseOptions.responseTimeout}ms...&#x22;
+				req.on &#x22;socket&#x22;, (socket) -&#x3e;
+					timeoutHandler = -&#x3e;
+						debugRequest &#x22;a response timeout occurred!&#x22;
+						req.abort()
+						reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ResponseTimeoutError</span>(&#x22;The response timed
+ out.&#x22;))
+
+					timeoutTimer = setTimeout(timeoutHandler, request.responseOptions.responseTimeout)
+
+			# Set up the upload progress monitoring.
+			totalBytes = request.options.headers[&#x22;content-length&#x22;]
+			completedBytes = 0
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ResponseTimeoutError.super_" id="apidoc.element.bhttp.ResponseTimeoutError.super_">
+        function <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.ResponseTimeoutError.prototype" id="apidoc.module.bhttp.ResponseTimeoutError.prototype">module bhttp.ResponseTimeoutError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ResponseTimeoutError.prototype.toJSON" id="apidoc.element.bhttp.ResponseTimeoutError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.ResponseTimeoutError.prototype.toString" id="apidoc.element.bhttp.ResponseTimeoutError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.ResponseTimeoutError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.UnsupportedProtocolError" id="apidoc.module.bhttp.UnsupportedProtocolError">module bhttp.UnsupportedProtocolError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.UnsupportedProtocolError.UnsupportedProtocolError" id="apidoc.element.bhttp.UnsupportedProtocolError.UnsupportedProtocolError">
+        function <span class="apidocSignatureSpan">bhttp.</span>UnsupportedProtocolError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UnsupportedProtocolError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    case &#x22;https&#x22;:
+      return https;
+    default:
+      return null;
+  }
+})();
+if (request.protocolModule == null) {
+  return Promise.reject()(new bhttpErrors.<span class="apidocCodeKeywordSpan">UnsupportedProtocolError</span>(&#x22;The protocol
+ specified (&#x22; + protocol + &#x22;) is not currently supported by this module.&#x22;));
+}
+if ((base = request.options).port == null) {
+  base.port = (function() {
+    switch (request.protocol) {
+      case &#x22;http&#x22;:
+        return 80;
+      case &#x22;https&#x22;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.UnsupportedProtocolError.super_" id="apidoc.element.bhttp.UnsupportedProtocolError.super_">
+        function <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.UnsupportedProtocolError.prototype" id="apidoc.module.bhttp.UnsupportedProtocolError.prototype">module bhttp.UnsupportedProtocolError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.UnsupportedProtocolError.prototype.toJSON" id="apidoc.element.bhttp.UnsupportedProtocolError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.UnsupportedProtocolError.prototype.toString" id="apidoc.element.bhttp.UnsupportedProtocolError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.UnsupportedProtocolError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.bhttp" id="apidoc.module.bhttp.bhttp">module bhttp.bhttp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.ConflictingOptionsError" id="apidoc.element.bhttp.bhttp.ConflictingOptionsError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>ConflictingOptionsError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConflictingOptionsError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		Promise.resolve [request, response, requestState]
+
+prepareOptions = (request, response, requestState) -&#x3e;
+	debugRequest &#x22;preparing options&#x22;
+	Promise.try -&#x3e;
+		# Do some sanity checks - there are a number of options that cannot be used together
+		if (request.options.formFields? or request.options.files?) and (request.options.inputStream? or request.options.inputBuffer?)
+			return Promise.reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ConflictingOptionsError</span>(&#x22;You
+ cannot define both formFields/files and a raw inputStream or inputBuffer.&#x22;), request, response, requestState)
+
+		if request.options.encodeJSON and (request.options.inputStream? or request.options.inputBuffer?)
+			return Promise.reject addErrorData(new bhttpErrors.ConflictingOptionsError(&#x22;You cannot use both encodeJSON and a raw inputStream
+ or inputBuffer.&#x22;, undefined, &#x22;If you meant to JSON-encode the stream, you will currently have to do so manually.&#x22
+;), request, response, requestState)
+
+		# If the user plans on streaming the response, we need to disable the agent entirely - otherwise the streams will block the pool
+.
+		if request.responseOptions.stream
+			request.options.agent ?= false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.ConnectionTimeoutError" id="apidoc.element.bhttp.bhttp.ConnectionTimeoutError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>ConnectionTimeoutError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConnectionTimeoutError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				debugRequest &#x22;closing request without payload&#x22;
+				req.end()
+
+			# In case something goes wrong during this process, somehow...
+			req.on &#x22;error&#x22;, (err) -&#x3e;
+				if err.code == &#x22;ETIMEDOUT&#x22;
+					debugRequest &#x22;a connection timeout occurred!&#x22;
+					reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ConnectionTimeoutError</span>(&#x22;The connection
+timed out.&#x22;))
+				else
+					reject err
+
+			req.on &#x22;response&#x22;, (res) -&#x3e;
+				if timeoutTimer?
+					debugResponse &#x22;got response in time, clearing response timeout timer&#x22;
+					clearTimeout(timeoutTimer)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.MultipartError" id="apidoc.element.bhttp.bhttp.MultipartError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>MultipartError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MultipartError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.RedirectError" id="apidoc.element.bhttp.bhttp.RedirectError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>RedirectError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RedirectError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		# Now the actual response processing.
+		response.request = request
+		response.requestState = requestState
+		response.redirectHistory = requestState.redirectHistory
+
+		if response.statusCode in [301, 302, 303, 307] and request.responseOptions.followRedirects
+			if requestState.redirectHistory.length &#x3e;= (request.responseOptions.redirectLimit - 1)
+				return Promise.reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">RedirectError</span>(&#x22;The maximum
+ amount of redirects ({request.responseOptions.redirectLimit}) was reached.&#x22;))
+
+			# 301: For GET and HEAD, redirect unchanged. For POST, PUT, PATCH, DELETE, &#x22;ask user&#x22; (in our case: throw an error.)
+			# 302: Redirect, change method to GET.
+			# 303: Redirect, change method to GET.
+			# 307: Redirect, retain method. Make same request again.
+			switch response.statusCode
+				when 301
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.ResponseTimeoutError" id="apidoc.element.bhttp.bhttp.ResponseTimeoutError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>ResponseTimeoutError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResponseTimeoutError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			# Connection timeout handling, if one is set.
+			if request.responseOptions.responseTimeout?
+				debugRequest &#x22;setting response timeout timer to #{request.responseOptions.responseTimeout}ms...&#x22;
+				req.on &#x22;socket&#x22;, (socket) -&#x3e;
+					timeoutHandler = -&#x3e;
+						debugRequest &#x22;a response timeout occurred!&#x22;
+						req.abort()
+						reject addErrorData(new bhttpErrors.<span class="apidocCodeKeywordSpan">ResponseTimeoutError</span>(&#x22;The response timed
+ out.&#x22;))
+
+					timeoutTimer = setTimeout(timeoutHandler, request.responseOptions.responseTimeout)
+
+			# Set up the upload progress monitoring.
+			totalBytes = request.options.headers[&#x22;content-length&#x22;]
+			completedBytes = 0
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.UnsupportedProtocolError" id="apidoc.element.bhttp.bhttp.UnsupportedProtocolError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>UnsupportedProtocolError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UnsupportedProtocolError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    case &#x22;https&#x22;:
+      return https;
+    default:
+      return null;
+  }
+})();
+if (request.protocolModule == null) {
+  return Promise.reject()(new bhttpErrors.<span class="apidocCodeKeywordSpan">UnsupportedProtocolError</span>(&#x22;The protocol
+ specified (&#x22; + protocol + &#x22;) is not currently supported by this module.&#x22;));
+}
+if ((base = request.options).port == null) {
+  base.port = (function() {
+    switch (request.protocol) {
+      case &#x22;http&#x22;:
+        return 80;
+      case &#x22;https&#x22;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp._doRequest" id="apidoc.element.bhttp.bhttp._doRequest">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>_doRequest
+        <span class="apidocSignatureSpan">(url, options, requestState)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_doRequest = function (url, options, requestState) {
+  return Promise[&#x22;try&#x22;]((function(_this) {
+    return function() {
+      var ref, request, response;
+      request = {
+        url: url,
+        options: _.clone(options)
+      };
+      response = null;
+      if (requestState == null) {
+        requestState = {
+          originalOptions: _.clone(options),
+          redirectHistory: []
+        };
+      }
+      if (requestState.sessionOptions == null) {
+        requestState.sessionOptions = (ref = _this._sessionOptions) != null ? ref : {};
+      }
+      return prepareRequest(request, response, requestState);
+    };
+  })(this)).spread((function(_this) {
+    return function(request, response, requestState) {
+      if (request.responseOptions.justPrepare) {
+        return Promise.resolve([request, response, requestState]);
+      } else {
+        return Promise[&#x22;try&#x22;](function() {
+          return bhttpAPI.executeRequest(request, response, requestState);
+        }).spread(function(request, response, requestState) {
+          return Promise.resolve(response);
+        });
+      }
+    };
+  })(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+doRedirect = function(request, response, requestState, newOptions) {
+return Promise[&#x22;try&#x22;](function() {
+  if (!request.responseOptions.keepRedirectResponses) {
+    response.pipe(devNull());
+  }
+  requestState.redirectHistory.push(response);
+  return bhttpAPI.<span class="apidocCodeKeywordSpan">_doRequest</span>(urlUtil.resolve(request.url, response.headers[&#x22;location
+&#x22;]), newOptions, requestState);
+});
+};
+
+createCookieJar = function(jar) {
+return {
+  set: function(cookie, url) {
+    return new Promise((function(_this) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.bhttpError" id="apidoc.element.bhttp.bhttp.bhttpError">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>bhttpError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bhttpError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.delete" id="apidoc.element.bhttp.bhttp.delete">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>delete
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;delete&#x22;;
+  return this.request(url, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## API
+
+The various error types are documented at the bottom of this README.
+
+### bhttp.head(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.<span class="apidocCodeKeywordSpan">delete</span>(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.put(url, [data, [options, [callback]]])
+### bhttp.patch(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.executeRequest" id="apidoc.element.bhttp.bhttp.executeRequest">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>executeRequest
+        <span class="apidocSignatureSpan">(request, response, requestState)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeRequest = function (request, response, requestState) {
+  return Promise[&#x22;try&#x22;](function() {
+    return makeRequest(request, response, requestState);
+  }).spread(function(request, response, requestState) {
+    return processResponse(request, response, requestState);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    };
+  })(this)).spread((function(_this) {
+    return function(request, response, requestState) {
+      if (request.responseOptions.justPrepare) {
+        return Promise.resolve([request, response, requestState]);
+      } else {
+        return Promise[&#x22;try&#x22;](function() {
+          return bhttpAPI.<span class="apidocCodeKeywordSpan">executeRequest</span>(request, response, requestState);
+        }).spread(function(request, response, requestState) {
+          return Promise.resolve(response);
+        });
+      }
+    };
+  })(this));
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.get" id="apidoc.element.bhttp.bhttp.get">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>get
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;get&#x22;;
+  return this.request(url, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+A simple example:
+
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.<span class="apidocCodeKeywordSpan">get</span>(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.toString());
+});
+```
+
+... or, using nodebacks:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.head" id="apidoc.element.bhttp.bhttp.head">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>head
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;head&#x22;;
+  return this.request(url, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+## API
+
+The various error types are documented at the bottom of this README.
+
+### bhttp.<span class="apidocCodeKeywordSpan">head</span>(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.delete(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.put(url, [data, [options, [callback]]])
+### bhttp.patch(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.patch" id="apidoc.element.bhttp.bhttp.patch">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>patch
+        <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (url, data, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;patch&#x22;;
+  return doPayloadRequest.bind(this)(url, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The various error types are documented at the bottom of this README.
+
+### bhttp.head(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.delete(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.put(url, [data, [options, [callback]]])
+### bhttp.<span class="apidocCodeKeywordSpan">patch</span>(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+* __data__: *Optional, only for POST/PUT/PATCH.* The payload to send along.
+* __options__: *Optional.* Extra options for the request. More details under the documentation for the `bhttp.request` method below
+.
+* __callback__: *Optional.* When using the nodeback API, the callback to use. If not specified, a Promise will be returned.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.post" id="apidoc.element.bhttp.bhttp.post">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>post
+        <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (url, data, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;post&#x22;;
+  return doPayloadRequest.bind(this)(url, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://somesite.com/bigfile.mp4&#x22;, {stream: true});
+}).then(function(response) {
+	return bhttp.<span class="apidocCodeKeywordSpan">post</span>(&#x22;http://somehostingservice.com/upload&#x22;, {
+		fileOne: response,
+		fileTwo: fs.createReadStream(&#x22;./otherbigfile.mkv&#x22;)
+	});
+}).then(function(response) {
+	console.log(&#x22;Response from hosting service:&#x22;, response.body.toString());
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.put" id="apidoc.element.bhttp.bhttp.put">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>put
+        <span class="apidocSignatureSpan">(url, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (url, data, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  options.method = &#x22;put&#x22;;
+  return doPayloadRequest.bind(this)(url, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The various error types are documented at the bottom of this README.
+
+### bhttp.head(url, [options, [callback]])
+### bhttp.get(url, [options, [callback]])
+### bhttp.delete(url, [options, [callback]])
+### bhttp.post(url, [data, [options, [callback]]])
+### bhttp.<span class="apidocCodeKeywordSpan">put</span>(url, [data, [options, [callback]]])
+### bhttp.patch(url, [data, [options, [callback]]])
+
+Convenience methods that pre-set the request method, and automatically send along the payload using the correct options for `bhttp
+.request`.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+* __data__: *Optional, only for POST/PUT/PATCH.* The payload to send along.
+* __options__: *Optional.* Extra options for the request. More details under the documentation for the `bhttp.request` method below
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.request" id="apidoc.element.bhttp.bhttp.request">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>request
+        <span class="apidocSignatureSpan">(url, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (url, options, callback) {
+  if (options == null) {
+    options = {};
+  }
+  return this._doRequest(url, options).nodeify(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* __String / Buffer__: The contents will be written to the request as-is.
+* __A stream__: The entire stream will be written to the request as-is.
+* __An object__: Will be encoded as form data, and can contain any combination of Strings, Buffers, streams, and arrays of any of
+ those. When only strings are used, the form data is querystring-encoded - if Buffers or streams are used, it will be encoded as
+ multipart/form-data.
+
+Further documentation for these methods, such as the response attributes, can be found in the below section for `bhttp.request`.
+
+### bhttp.<span class="apidocCodeKeywordSpan">request</span>(url, [options, [callback]])
+
+Makes a request, and returns the response object asynchronously. The response object is a standard `http.IncomingMessages` with
+a few additional properties (documented below the argument list).
+
+Note that (progress) event handlers must be specified in the `options` or (in the case of download progress events) as an event
+listener on the response object - as `bhttp` uses Promises, it is not technically possible to return an EventEmitter.
+
+* __url__: The URL to request, with protocol. When using HTTPS, please be sure to read the &#x27;Caveats&#x27; section.
+* __options__: *Optional.* Extra options for the request. Any other options not listed here will be passed on directly to the `http
+` or `https` module.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.session" id="apidoc.element.bhttp.bhttp.session">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>session
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">session = function (options) {
+  var key, session, value;
+  if (options == null) {
+    options = {};
+  }
+  options = _.clone(options);
+  session = {};
+  for (key in this) {
+    value = this[key];
+    if (value instanceof Function) {
+      value = value.bind(session);
+    }
+    session[key] = value;
+  }
+  if (options.cookieJar == null) {
+    options.cookieJar = createCookieJar(new toughCookie.CookieJar());
+  } else if (options.cookieJar === false) {
+    delete options.cookieJar;
+  } else {
+    options.cookieJar = createCookieJar(options.cookieJar);
+  }
+  session._sessionOptions = options;
+  return session;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Sessions
+
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+var session = bhttp.<span class="apidocCodeKeywordSpan">session</span>({ headers: {&#x22;user-agent&#x22;: &#x22;MyCustomUserAgent
+/2.0&#x22;} });
+
+// Our new session now automatically has a cookie jar, and also uses our preset option(s).
+
+Promise.try(function(){
+	return session.get(&#x22;http://hypotheticalsite.com/cookietest&#x22;); // Assume that this site now sets a cookie
+}).then(function(response){
+	return session.get(&#x22;http://hypotheticalsite.com/other-endpoint&#x22;); // This now sends along the cookie!
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttp.wrapStream" id="apidoc.element.bhttp.bhttp.wrapStream">
+        function <span class="apidocSignatureSpan">bhttp.bhttp.</span>wrapStream
+        <span class="apidocSignatureSpan">(stream, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrapStream = function (stream, options) {
+  return {
+    _bhttpStreamWrapper: true,
+    stream: stream,
+    options: options
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### bhttp.session([defaultOptions])
+
+This will create a new session. The `defaultOptions` will be deep-merged with the options specified for each request (where the
+request-specific options have priority).
+
+A new cookie jar is automatically created, unless you either specify a custom `cookieJar` option or set the `cookieJar` option to
+ `false` (in which case no cookie jar is used).
+
+### bhttp.<span class="apidocCodeKeywordSpan">wrapStream</span>(stream, options)
+
+This will return a &#x27;stream wrapper&#x27; containing explicit metadata for a stream. You&#x27;ll need to use it when passing
+ an unsupported type of stream to a `data` parameter or `formFields`/`files` option.
+
+* __stream__: The stream to wrap.
+* __options__: The options for this stream. All options are optional, but recommended to specify.
+	* __contentLength__: The length of the stream in bytes.
+	* __contentType__: The MIME type of the stream.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.bhttpError" id="apidoc.module.bhttp.bhttpError">module bhttp.bhttpError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttpError.bhttpError" id="apidoc.element.bhttp.bhttpError.bhttpError">
+        function <span class="apidocSignatureSpan">bhttp.</span>bhttpError
+        <span class="apidocSignatureSpan">(msg, expl, fix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bhttpError = function (msg, expl, fix) {
+	var attrs = {};
+	if (typeof msg !== null &#x26;&#x26; typeof msg === &#x27;object&#x27;) {
+		attrs = msg;
+		msg = attrs[&#x27;message&#x27;] || defaultMessage;
+		if (attrs.hasOwnProperty(&#x27;stack&#x27;)
+				|| attrs.hasOwnProperty(&#x27;name&#x27;)
+				|| attrs.hasOwnProperty(&#x27;code&#x27;)) {
+			throw Error(&#x22;Properties &#x27;stack&#x27;, &#x27;name&#x27; or &#x27;code&#x27; &#x22; +
+					&#x22;cannot be overridden&#x22;);
+		}
+	}
+	attrs[&#x27;status&#x27;] = attrs[&#x27;status&#x27;] || statusCode;
+    msg = msg || defaultMessage;
+    expl = expl || defaultExplanation;
+    fix = fix || defaultResponse;
+
+    parent.call(this, msg);
+
+    // hack around the defineProperty for stack so
+    // we can delay stack formatting until access
+    // for performance reasons
+    Error.captureStackTrace(stack, scope[className]);
+
+<span class="apidocCodeCommentSpan">/**
+ * Return the stack tracks for the error.
+ *
+ * @return {String}
+ * @api public
+ */
+</span>    Object.defineProperty(this, &#x27;stack&#x27;, {
+        configurable: true,
+        enumerable: false,
+        get: function() {
+            if (!formattedStack) {
+                formattedStack = stack.stack.replace(&#x27;[object Object]&#x27;, &#x27;Error: &#x27; + this.message);
+            }
+            return formattedStack;
+        }
+    });
+
+/**
+ * Return the explanation for this error.
+ *
+ * @return {String}
+ * @api public
+*/
+
+    Object.defineProperty(this, &#x27;explanation&#x27;, {
+        value: attrs[&#x27;explanation&#x27;] || expl,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the operator response for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;response&#x27;, {
+        value: attrs[&#x27;response&#x27;] || fix,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Return the error code.
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;code&#x27;, {
+        value: attrs[&#x27;code&#x27;] || errorCode,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * HTTP status code of this error.
+ *
+ * If the instance&#x27;s `code` is not a valid
+ * HTTP status code it&#x27;s normalized to 500.s
+ *
+ * @return {Number}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;status&#x27;, {
+        value: attrs[&#x27;status&#x27;] || (http.STATUS_CODES[errorCode] ? errorCode : 500),
+        configurable: true,
+        // normalize for http status code and connect compat
+        enumerable: true
+    });
+
+/**
+ * Name of this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;name&#x27;, {
+        value: className,
+        configurable: true,
+        enumerable: true
+    });
+
+/**
+ * Message for this error.
+ *
+ * @return {String}
+ * @api public
+ */
+
+    Object.defineProperty(this, &#x27;message&#x27;, {
+        value: attrs[&#x27;message&#x27;] || msg,
+        configurable: true,
+        enumerable: true
+    });
+
+    // expose extra conf attrs as properties
+    for (var key in attrs) {
+		if (!this.hasOwnProperty(key)) {
+			Object.defineProperty(this, key, {
+	            value: attrs[key],
+	            configurable: true,
+	            enumerable: true
+	        });
+		}
+	}
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttpError.super_" id="apidoc.element.bhttp.bhttpError.super_">
+        function <span class="apidocSignatureSpan">bhttp.bhttpError.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bhttp.bhttpError.prototype" id="apidoc.module.bhttp.bhttpError.prototype">module bhttp.bhttpError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttpError.prototype.toJSON" id="apidoc.element.bhttp.bhttpError.prototype.toJSON">
+        function <span class="apidocSignatureSpan">bhttp.bhttpError.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    // TODO externalization
+    return useStack
+            ? mixin(this, {stack: this.stack}, true)
+            : mixin(this, {}, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bhttp.bhttpError.prototype.toString" id="apidoc.element.bhttp.bhttpError.prototype.toString">
+        function <span class="apidocSignatureSpan">bhttp.bhttpError.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+
+<span class="apidocCodeCommentSpan">    /*!
+
+    The snippet below would allow us to provide connect errorHandler()
+    middleware compatible errors, but is too costly. In a 1000 executions
+    of toString() it adds ~25% overhead.
+
+    var e = Error();
+    Error.captureStackTrace(e);
+    if (~e.stack.indexOf(&#x22;connect/lib/middleware/errorHandler.js&#x22;)) {
+        return this.message;
+    }
+    */
+</span>
+    // TODO externalization
+    var msg = util.format(&#x22;%s: %s\nCode: %s&#x22;, this.name, this.message, this.code);
+    if (this.explanation) {
+        msg += &#x22;\nExplanation: &#x22; + this.explanation;
+    }
+    if (this.response) {
+        msg += &#x22;\nResponse: &#x22; + this.response;
+    }
+
+    function isExtra(key) {
+    	return [&#x27;name&#x27;, &#x27;message&#x27;, &#x27;status&#x27;, &#x27;code&#x27;,
+    	        &#x27;response&#x27;, &#x27;explanation&#x27;, &#x27;stack&#x27;].indexOf(key) &#x3c; 0;
+    }
+
+    // extra properties
+    Object.keys(this).filter(isExtra).forEach(function(key) {
+    	msg += util.format(&#x22;\n%s: %s&#x22;, key, this[key]);
+    }, this);
+
+    if (useStack) {
+        msg += &#x22;\n&#x22; + this.stack;
+    }
+    return msg;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Promise = require(&#x22;bluebird&#x22;);
+var bhttp = require(&#x22;bhttp&#x22;);
+
+Promise.try(function() {
+	return bhttp.get(&#x22;http://icanhazip.com/&#x22;);
+}).then(function(response) {
+	console.log(&#x22;Your IP is:&#x22;, response.body.<span class="apidocCodeKeywordSpan">toString</span>());
+});
+```
+
+... or, using nodebacks:
+
+```javascript
+var bhttp = require(&#x22;bhttp&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
